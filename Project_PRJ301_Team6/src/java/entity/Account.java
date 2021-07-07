@@ -19,7 +19,7 @@ public class Account {
     public Account() {
     }
 
-    public Account(String usernamename, String password, String name, String email, String DOB) {
+    public Account(String username, String password, String name, String email, String DOB) {
         this.username = username;
         this.password = password;
         this.name = name;

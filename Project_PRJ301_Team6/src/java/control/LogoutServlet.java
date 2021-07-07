@@ -5,11 +5,9 @@
  */
 package control;
 
-import entity.Account;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -19,8 +17,7 @@ import javax.servlet.http.HttpSession;
  *
  * @author USER
  */
-@WebServlet(name = "LoginServlet", urlPatterns = {"/login"})
-public class LoginServlet extends HttpServlet {
+public class LogoutServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -35,26 +32,9 @@ public class LoginServlet extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         response.setContentType("text/html;charset=UTF-8");
-        try {
-            HttpSession session = request.getSession();
-            String username = request.getParameter("uname");
-            String password = request.getParameter("psw");
-
-            session.setAttribute("user1", null);
-
-            Account user = new Account("admin", "123", "Hoang", "admin@gmail.com", "18/9/2001");
-            if (!username.equals(user.getUsername()) || !password.equals(user.getPassword())) {
-                request.setAttribute("error", "Login fail!");
-                request.getRequestDispatcher("login.jsp").forward(request, response);
-                
-            } else {
-                session.setAttribute("user1", user);
-                response.sendRedirect("index.jsp");
-            }
-            
-        } catch (IOException | ServletException e) {
-
-        }
+        HttpSession session = request.getSession();
+        session.setAttribute("user1", null);
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

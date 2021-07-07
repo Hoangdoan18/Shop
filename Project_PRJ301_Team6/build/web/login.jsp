@@ -11,7 +11,7 @@
     </head>
     
     <body>
-        <form action="action_page.php" method="post">
+        <form action="login" method="post">
             <div class="imgcontainer">
                 <a href ="index.html">
                     <img src="./img/index/logos.jpg"  width="300px">
@@ -25,9 +25,9 @@
                 <label for="psw"><b>Password</b></label>
                 <input type="password" placeholder="Enter Password" name="psw" required>
                 
-<!--                <div>
-                    <h6 style="color: red" >Login fail ! </h6>
-                </div>-->
+                <div>
+                    <h6 style="color: red" >${error}</h6>
+                </div>
                 <button type="submit">Login</button>
                 <label>
                     <input type="checkbox" checked="checked" name="remember"> Remember me
