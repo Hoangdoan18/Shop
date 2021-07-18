@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>LoginServlet</servlet-name>
+        <servlet-class>control.LoginServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LogoutServlet</servlet-name>
+        <servlet-class>control.LogoutServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddtoCartServlet</servlet-name>
+        <servlet-class>control.AddtoCartServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductWomenServlet</servlet-name>
+        <servlet-class>control.ProductWomenServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProductMenServlet</servlet-name>
+        <servlet-class>control.ProductMenServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>LogoutServlet</servlet-name>
+        <url-pattern>/LogoutServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddtoCartServlet</servlet-name>
+        <url-pattern>/addtocart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductWomenServlet</servlet-name>
+        <url-pattern>/productwomen</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProductMenServlet</servlet-name>
+        <url-pattern>/productmen</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
